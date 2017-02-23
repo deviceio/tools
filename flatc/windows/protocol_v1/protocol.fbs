@@ -1,0 +1,43 @@
+namespace protocol;
+
+enum Message : byte  {
+    None = 1,
+    Hanshake,
+    Close,
+    Call,
+    Data   
+}
+
+enum Type : byte {
+    Void = 1,
+    Bool,
+    Bytes,
+    Int32,
+    Int64,
+    UInt32,
+    UInt64,
+    Float32,
+    Float64,
+    UTF8,
+    UTF16,
+    DateTime,
+    Reference,
+    Object
+}
+
+table Envelope {
+    Ctx:long;
+    Type:Message = 1;    
+}
+
+table Handshake {
+}
+
+table Close {
+}
+
+table Call {
+}
+
+table Data {
+}
